@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Primero Paint + Drywall — Memphis &amp; Oxford</title>
+  <meta name="description" content="Walls done properly. Paint and drywall in Greater Memphis and Oxford, Mississippi. Honest estimates, signed scopes, photo-documented work." />
+
+  <!-- Favicon (inline SVG so the mockup is fully self-contained) -->
+  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect width="200" height="200" rx="40" fill="%231F2A44"/><circle cx="100" cy="100" r="92" fill="none" stroke="%23C8A46B" stroke-width="6"/><rect x="20" y="110" width="160" height="14" rx="2" fill="%23F5F1EA"/><circle cx="178" cy="132" r="4" fill="%23F5F1EA"/><text x="100" y="150" text-anchor="middle" font-family="Times New Roman,serif" font-style="italic" font-weight="500" font-size="170" fill="%23C8A46B">P</text></svg>' />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Tokens (from primero brand pack) ──────────────────── */
+    :root {
+      --navy:        #1F2A44;
+      --navy-deep:   #15192C;
+      --gold:        #C8A46B;
+      --gold-deep:   #A88450;
+      --gold-bright: #DDB97D;
+      --cream:       #F5F1EA;
+      --cream-warm:  #F9F4EA;
+      --paper:       #FBF7F0;
+      --charcoal:    #2E2E2E;
+      --ink:         #1A1A1A;
+      --steel:       #8A93A6;
+      --steel-soft:  #B8BDC9;
+      --rust:        #B5563A;
+      --rule:        #D8D2C5;
+      --rule-dark:   #2A3554;
+
+      --serif: 'Playfair Display', 'Times New Roman', Georgia, serif;
+      --sans: 'Montserrat', 'Helvetica Neue', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--charcoal);
+      background: var(--cream);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; border: none; background: none; }
+    img, svg { display: block; max-width: 100%; }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* ─── Type system ──────────────────────────────────────── */
+    .display { font-family: var(--serif); font-style: italic; font-weight: 500; }
+    .tag {
+      font-family: var(--sans);
+      font-weight: 500;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+    }
+    .label {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+    }
+
+    /* ─── Top utility bar ──────────────────────────────────── */
+    .utility {
+      background: var(--navy);
+      color: var(--cream);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 8px 0;
+    }
+    .utility .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .utility-left { color: var(--steel-soft); }
+    .utility-right a {
+      color: var(--cream);
+      margin-left: 22px;
+      transition: color 0.15s;
+    }
+    .utility-right a:hover { color: var(--gold-bright); }
+    @media (max-width: 720px) {
+      .utility-left { display: none; }
+      .utility .container { justify-content: center; }
+      .utility-right a { margin: 0 12px; }
+    }
+
+    /* ─── Header / Nav ─────────────────────────────────────── */
+    header {
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: rgba(245, 241, 234, 0.92);
+    }
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      flex: none;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .brand-name {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--navy);
+      letter-spacing: 0.005em;
+    }
+    .brand-tag {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-top: 4px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.05em;
+      color: var(--charcoal);
+      transition: color 0.15s;
+    }
+    .nav-links a:hover { color: var(--gold-deep); }
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 11px 22px;
+      border-radius: 2px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+    }
+    .nav-cta:hover {
+      background: var(--gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px -6px rgba(200, 164, 107, 0.4);
+    }
+    .menu-btn { display: none; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .menu-btn {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+      }
+      .menu-btn span {
+        width: 22px;
+        height: 2px;
+        background: var(--navy);
+      }
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: var(--navy);
+      color: var(--cream);
+      overflow: hidden;
+      padding: 100px 0 120px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 18% 20%, rgba(200, 164, 107, 0.18), transparent 50%),
+        radial-gradient(ellipse at 90% 80%, rgba(200, 164, 107, 0.08), transparent 55%);
+      pointer-events: none;
+    }
+    .hero::after {
+      /* Gold paint sweep with drip — recurring brand motif */
+      content: '';
+      position: absolute;
+      bottom: 60px;
+      left: -40px;
+      width: 360px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+      box-shadow:
+        336px 22px 0 -5px var(--gold);
+      opacity: 0.95;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 880px) {
+      .hero { padding: 70px 0 90px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--gold);
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-kicker::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(44px, 6.5vw, 78px);
+      line-height: 1.02;
+      letter-spacing: -0.012em;
+      margin-bottom: 28px;
+      color: var(--cream);
+    }
+    .hero h1 .underline {
+      position: relative;
+      white-space: nowrap;
+      display: inline-block;
+    }
+    .hero h1 .underline::after {
+      content: '';
+      position: absolute;
+      left: -4px;
+      right: -8px;
+      bottom: 8%;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 2px;
+      z-index: -1;
+      opacity: 0.85;
+    }
+    .hero-sub {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: clamp(17px, 1.5vw, 19px);
+      line-height: 1.55;
+      color: rgba(245, 241, 234, 0.85);
+      max-width: 540px;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 30px;
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: all 0.18s;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .btn-gold:hover {
+      background: var(--gold-bright);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px -6px rgba(200, 164, 107, 0.5);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245, 241, 234, 0.35);
+    }
+    .btn-ghost:hover {
+      border-color: var(--cream);
+      background: rgba(245, 241, 234, 0.06);
+    }
+    .btn-navy {
+      background: var(--navy);
+      color: var(--cream);
+    }
+    .btn-navy:hover {
+      background: var(--navy-deep);
+      transform: translateY(-1px);
+    }
+    .btn-sm { padding: 11px 22px; font-size: 11px; }
+
+    /* Hero stat panel */
+    .hero-card {
+      background: rgba(245, 241, 234, 0.04);
+      border: 1px solid rgba(200, 164, 107, 0.25);
+      border-radius: 4px;
+      padding: 36px 36px 32px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .hero-card-title {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(200, 164, 107, 0.2);
+    }
+    .hero-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 10px 0;
+    }
+    .hero-card-row + .hero-card-row {
+      border-top: 1px solid rgba(245, 241, 234, 0.08);
+    }
+    .hero-card-label {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: rgba(245, 241, 234, 0.72);
+    }
+    .hero-card-val {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--cream);
+    }
+
+    /* ─── Trust bar ─────────────────────────────────────────── */
+    .trust {
+      background: var(--cream);
+      padding: 28px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+    .trust-icon {
+      width: 32px;
+      height: 32px;
+      flex: none;
+      color: var(--navy);
+    }
+    .trust-item strong {
+      display: block;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+    @media (max-width: 880px) {
+      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    }
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Section primitives ───────────────────────────────── */
+    section.standard {
+      padding: 96px 0;
+    }
+    .section-header {
+      max-width: 720px;
+      margin-bottom: 56px;
+    }
+    .section-header.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    .section-kicker {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.36em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: 18px;
+      position: relative;
+      padding-left: 46px;
+    }
+    .section-kicker::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+    .section-header.center .section-kicker { padding-left: 0; }
+    .section-header.center .section-kicker::before { display: none; }
+    h2.section-h {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-style: italic;
+      font-size: clamp(34px, 4.5vw, 50px);
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+    .section-lead {
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      max-width: 620px;
+    }
+
+    /* ─── Services ─────────────────────────────────────────── */
+    section.services { background: var(--cream); padding: 96px 0 84px; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 36px 32px 32px;
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+      cursor: pointer;
+    }
+    .service:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px -16px rgba(31, 42, 68, 0.18);
+      border-color: var(--gold);
+    }
+    .service::before {
+      /* Top-left paint mark */
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 32px;
+      width: 48px;
+      height: 4px;
+      background: var(--gold);
+      border-radius: 0 0 2px 2px;
+    }
+    .service-icon {
+      width: 48px;
+      height: 48px;
+      color: var(--navy);
+      margin-bottom: 22px;
+      margin-top: 8px;
+    }
+    .service h3 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .service p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 18px;
+    }
+    .service-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(200, 164, 107, 0.15);
+      padding: 5px 10px;
+      border-radius: 2px;
+    }
+    @media (max-width: 880px) {
+      .services-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Process ──────────────────────────────────────────── */
+    section.process {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    section.process::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 280px; height: 280px;
+      background: radial-gradient(circle at top right, rgba(200, 164, 107, 0.16), transparent 60%);
+      pointer-events: none;
+    }
+    section.process h2.section-h { color: var(--cream); }
+    section.process .section-kicker { color: var(--gold-bright); }
+    section.process .section-kicker::before { background: var(--gold-bright); }
+    section.process .section-lead { color: rgba(245, 241, 234, 0.78); }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .step {
+      padding: 32px 24px 32px 0;
+      border-left: 1px solid rgba(200, 164, 107, 0.25);
+      padding-left: 28px;
+      position: relative;
+    }
+    .step:first-child {
+      border-left: 1px solid var(--gold);
+    }
+    .step-num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 38px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+    .step h4 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+    .step p {
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: rgba(245, 241, 234, 0.7);
+    }
+    @media (max-width: 980px) {
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .step:nth-child(odd) { border-left: 1px solid var(--gold); }
+    }
+    @media (max-width: 560px) {
+      .process-grid { grid-template-columns: 1fr; }
+      .step { border-left: 1px solid var(--gold); }
+    }
+
+    /* ─── Differentiators ──────────────────────────────────── */
+    section.diff { background: var(--cream); padding: 96px 0; }
+    .diff-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      gap: 64px;
+      align-items: center;
+    }
+    @media (max-width: 880px) {
+      .diff-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    .diff-points {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    .diff-point {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .diff-marker {
+      width: 56px;
+      height: 56px;
+      background: var(--cream-warm);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--navy);
+      flex: none;
+    }
+    .diff-point h4 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .diff-point p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--charcoal);
+    }
+
+    /* Photo documentation visual */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .photo-tile {
+      aspect-ratio: 4 / 3;
+      background: var(--navy);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      padding: 14px;
+    }
+    .photo-tile::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(31, 42, 68, 0.6) 0%, rgba(31, 42, 68, 0.95) 100%);
+    }
+    .photo-tile-1 { background: linear-gradient(135deg, #3a4565 0%, #1F2A44 100%); }
+    .photo-tile-2 { background: linear-gradient(135deg, #C8A46B 0%, #A88450 100%); }
+    .photo-tile-3 { background: linear-gradient(135deg, #5a6580 0%, #2c3a5c 100%); }
+    .photo-tile-4 { background: linear-gradient(135deg, #d4b07a 0%, #b58a55 100%); }
+    .photo-tile::before { display: none; }
+    .photo-meta {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 234, 0.8);
+    }
+    .photo-tile-2 .photo-meta, .photo-tile-4 .photo-meta {
+      color: rgba(31, 42, 68, 0.75);
+    }
+    .photo-stage {
+      background: rgba(0, 0, 0, 0.3);
+      padding: 5px 9px;
+      border-radius: 2px;
+      color: rgba(245, 241, 234, 0.95);
+    }
+    .photo-tile-2 .photo-stage, .photo-tile-4 .photo-stage {
+      background: rgba(31, 42, 68, 0.85);
+      color: var(--cream);
+    }
+
+    /* ─── Areas served ─────────────────────────────────────── */
+    section.areas { background: var(--paper); padding: 96px 0; }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 720px) {
+      .areas-grid { grid-template-columns: 1fr; }
+    }
+    .area-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 36px 32px;
+      position: relative;
+    }
+    .area-card::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 32px;
+      right: 32px;
+      height: 3px;
+      background: var(--navy);
+    }
+    .area-card.oxford::before { background: var(--gold); }
+    .area-card .market-label {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold-deep);
+      margin-bottom: 12px;
+    }
+    .area-card h3 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .area-card p {
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 20px;
+    }
+    .area-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .area-list li {
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--charcoal);
+      padding: 5px 10px;
+      background: var(--paper);
+      border-radius: 2px;
+    }
+
+    /* ─── Client / quick links ─────────────────────────────── */
+    section.client { background: var(--cream); padding: 80px 0; }
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    @media (max-width: 720px) { .client-grid { grid-template-columns: 1fr; } }
+    .client-card {
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 30px 28px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      display: block;
+      cursor: pointer;
+    }
+    .client-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--navy);
+      box-shadow: 0 10px 24px -14px rgba(31, 42, 68, 0.25);
+    }
+    .client-icon {
+      width: 36px;
+      height: 36px;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .client-card h4 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 500;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .client-card p {
+      font-size: 13.5px;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    /* ─── Request form ─────────────────────────────────────── */
+    section.request {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    section.request::before {
+      content: '';
+      position: absolute;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 240px;
+      background: radial-gradient(ellipse, rgba(200, 164, 107, 0.18), transparent 60%);
+      pointer-events: none;
+    }
+    .request-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+    @media (max-width: 880px) {
+      .request-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+    section.request h2.section-h { color: var(--cream); }
+    section.request .section-kicker { color: var(--gold-bright); }
+    section.request .section-kicker::before { background: var(--gold-bright); }
+    .request-info p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: rgba(245, 241, 234, 0.78);
+      margin-bottom: 18px;
+    }
+    .request-info-block {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(200, 164, 107, 0.2);
+    }
+    .request-info-block .label { color: var(--gold-bright); margin-bottom: 8px; display: block; }
+    .request-info-block a {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+    .request-info-block a:hover { color: var(--gold-bright); }
+
+    .request-form {
+      background: var(--cream);
+      color: var(--charcoal);
+      padding: 36px;
+      border-radius: 4px;
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.5);
+      border-top: 4px solid var(--gold);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-grid .full { grid-column: 1 / -1; }
+    @media (max-width: 560px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .request-form { padding: 28px 22px; }
+    }
+    .field { display: flex; flex-direction: column; }
+    .field label {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .field input,
+    .field select,
+    .field textarea {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 14px;
+      color: var(--charcoal);
+      background: white;
+      border: 1px solid var(--rule);
+      border-radius: 2px;
+      padding: 11px 13px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .field textarea { min-height: 88px; resize: vertical; font-family: var(--sans); }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none;
+      border-color: var(--navy);
+      box-shadow: 0 0 0 3px rgba(31, 42, 68, 0.08);
+    }
+    .form-submit {
+      width: 100%;
+      margin-top: 18px;
+    }
+    .form-meta {
+      font-size: 11px;
+      color: var(--steel);
+      margin-top: 14px;
+      text-align: center;
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── Footer ───────────────────────────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      color: var(--cream);
+      padding: 64px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(200, 164, 107, 0.18);
+    }
+    @media (max-width: 880px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    .footer-col h5 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold-bright);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li {
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: rgba(245, 241, 234, 0.7);
+      padding: 4px 0;
+    }
+    .footer-col a:hover { color: var(--gold-bright); }
+    .footer-brand .footer-mark {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 16px;
+    }
+    .footer-brand p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: rgba(245, 241, 234, 0.65);
+      margin-top: 12px;
+      max-width: 280px;
+    }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-top: 28px;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: rgba(245, 241, 234, 0.5);
+    }
+    .footer-sister a { color: var(--gold-bright); }
+    .footer-sister a:hover { color: var(--cream); }
+
+    /* ─── Mock notice (fired on any disabled CTA click) ────── */
+    .mock-notice {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--navy);
+      color: var(--cream);
+      padding: 14px 24px;
+      border-radius: 3px;
+      box-shadow: 0 16px 40px -16px rgba(0, 0, 0, 0.45);
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      z-index: 100;
+      opacity: 0;
+      transform: translateY(80px);
+      transition: opacity 0.25s ease, transform 0.25s ease;
+      pointer-events: none;
+      border-top: 2px solid var(--gold);
+      max-width: 92vw;
+      text-align: center;
+    }
+    .mock-notice.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 600px) {
+      .mock-notice { right: 14px; bottom: 60px; font-size: 12px; padding: 12px 18px; }
+    }
+
+    /* Mockup banner — corner ribbon so it's clear this isn't live */
+    .mockup-ribbon {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      background: var(--rust);
+      color: var(--cream);
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      border-radius: 2px;
+      z-index: 90;
+      box-shadow: 0 4px 14px -4px rgba(181, 86, 58, 0.4);
+      opacity: 0.92;
+    }
+    @media (max-width: 600px) {
+      .mockup-ribbon { bottom: 14px; left: 14px; font-size: 9px; padding: 6px 11px; }
+    }
+
+    /* ─── Reveal on scroll ─────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal.delay-1 { transition-delay: 0.08s; }
+    .reveal.delay-2 { transition-delay: 0.16s; }
+    .reveal.delay-3 { transition-delay: 0.24s; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <span class="mockup-ribbon">Mockup · Not live</span>
+
+  <!-- ─── Utility bar ─── -->
+  <div class="utility">
+    <div class="container">
+      <span class="utility-left">Greater Memphis · Oxford · North Mississippi</span>
+      <span class="utility-right">
+        <a href="#" data-mock>Call · 662·715·1804</a>
+        <a href="#" data-mock>Pay Invoice</a>
+      </span>
+    </div>
+  </div>
+
+  <!-- ─── Header ─── -->
+  <header>
+    <div class="container">
+      <nav class="nav">
+        <a href="#" class="brand" data-mock>
+          <svg class="brand-mark" viewBox="0 0 200 200" aria-hidden="true">
+            <rect width="200" height="200" rx="14" fill="#1F2A44"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#C8A46B" stroke-width="5"/>
+            <rect x="22" y="108" width="156" height="13" rx="2" fill="#F5F1EA"/>
+            <circle cx="176" cy="129" r="4" fill="#F5F1EA"/>
+            <text x="100" y="148" text-anchor="middle"
+                  font-family="Playfair Display, Times New Roman, serif"
+                  font-style="italic" font-weight="500" font-size="160" fill="#C8A46B">P</text>
+          </svg>
+          <span class="brand-text">
+            <span class="brand-name">Primero</span>
+            <span class="brand-tag">Paint · Drywall</span>
+          </span>
+        </a>
+        <div class="nav-links">
+          <a href="#services" data-mock>Services</a>
+          <a href="#process" data-mock>Process</a>
+          <a href="#areas" data-mock>Where We Work</a>
+          <a href="#" class="nav-cta" data-mock>Request Estimate</a>
+        </div>
+        <button class="menu-btn" aria-label="Menu" data-mock>
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ─── Hero ─── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="reveal">
+          <div class="hero-kicker">Memphis · Oxford · North Mississippi</div>
+          <h1>Walls done <span class="underline">properly.</span></h1>
+          <p class="hero-sub">
+            Paint and drywall in Memphis and Oxford, Mississippi. Honest estimates,
+            signed scopes, photo-documented work. Same crew start to finish.
+            Built for homeowners and property managers who'd rather not gamble.
+          </p>
+          <div class="hero-ctas">
+            <a href="#request" class="btn btn-gold" data-mock>Request an Estimate</a>
+            <a href="#process" class="btn btn-ghost" data-mock>How We Work →</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal delay-2">
+          <div class="hero-card-title">Typical projects</div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">Single room repaint</span>
+            <span class="hero-card-val">$400 – $800</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">Whole interior</span>
+            <span class="hero-card-val">$3k – $9k</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">Drywall repair &amp; finish</span>
+            <span class="hero-card-val">$300 – $2k</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">Exterior repaint</span>
+            <span class="hero-card-val">$3k – $12k</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">STR turn refresh</span>
+            <span class="hero-card-val">$600 – $2.5k</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Trust bar ─── -->
+  <section class="trust">
+    <div class="container">
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="6" width="22" height="20" rx="2"/>
+            <path d="M10 12h12M10 16h12M10 20h7"/>
+          </svg>
+          <span><strong>Signed Scopes</strong>Before any work begins</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="8" width="22" height="16" rx="2"/>
+            <circle cx="16" cy="16" r="4"/>
+            <path d="M11 8l1.5-2.5h7L21 8"/>
+          </svg>
+          <span><strong>Photo-Documented</strong>Before, during, after</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="16" cy="16" r="11"/>
+            <path d="M16 9v7l4 2"/>
+          </svg>
+          <span><strong>On Schedule</strong>You'll know what's happening</span>
+        </div>
+        <div class="trust-item">
+          <svg class="trust-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 16l4 4 10-10"/>
+            <path d="M22 6l4 4M16 24l4 4 6-6"/>
+          </svg>
+          <span><strong>Same Crew</strong>Start to finish</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Services ─── -->
+  <section id="services" class="services standard">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-kicker">What We Do</div>
+        <h2 class="section-h">A bounded promise: <em>we do walls properly.</em></h2>
+        <p class="section-lead">
+          Paint and drywall, residential and commercial, in two markets. We don't
+          chase every trade — which means the work we do, we do better than the
+          GC down the street.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M8 38h32M8 38V18l8-8h16l8 8v20"/>
+            <path d="M16 38V24h16v14"/>
+            <path d="M22 24v14M22 30h4"/>
+          </svg>
+          <h3>Interior Paint</h3>
+          <p>Single rooms to whole-home repaints. Patch, prime, two coats minimum, drop cloths everywhere, your stuff stays where you left it.</p>
+          <div class="service-meta">
+            <span class="chip">Walls</span>
+            <span class="chip">Trim</span>
+            <span class="chip">Ceilings</span>
+            <span class="chip">Cabinets</span>
+          </div>
+        </div>
+
+        <div class="service reveal delay-1">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 42h36"/>
+            <path d="M10 42V20l14-12 14 12v22"/>
+            <rect x="20" y="28" width="8" height="14"/>
+            <path d="M14 22h6v6h-6zM28 22h6v6h-6z"/>
+          </svg>
+          <h3>Exterior Paint</h3>
+          <p>Wood, fiber cement, brick, stucco. Pressure wash, scrape, prime, finish. We work around your schedule and the weather, not the other way around.</p>
+          <div class="service-meta">
+            <span class="chip">Siding</span>
+            <span class="chip">Trim</span>
+            <span class="chip">Doors</span>
+            <span class="chip">Soffits</span>
+          </div>
+        </div>
+
+        <div class="service reveal delay-2">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="6" y="6" width="36" height="36" rx="2"/>
+            <path d="M6 18h36M6 30h36M18 6v36M30 6v36"/>
+          </svg>
+          <h3>Drywall &amp; Repair</h3>
+          <p>Hole patches, water-damage repair, full hangs and finishes. Three-coat mud, sanded smooth, ready for paint. Or we just do the rock and tape.</p>
+          <div class="service-meta">
+            <span class="chip">Patches</span>
+            <span class="chip">Hangs</span>
+            <span class="chip">Texture Match</span>
+          </div>
+        </div>
+
+        <div class="service reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="8" y="8" width="32" height="32" rx="2"/>
+            <path d="M8 16h32M14 8v8"/>
+            <circle cx="24" cy="28" r="4"/>
+            <path d="M18 38l4-4 4 4 4-6 4 6"/>
+          </svg>
+          <h3>STR Turn Refresh</h3>
+          <p>Touch-ups and full repaints between guests. Photo-documented before/after delivered to your property manager. Built for Airbnb hosts who care.</p>
+          <div class="service-meta">
+            <span class="chip">Touch-Ups</span>
+            <span class="chip">Wear Repaint</span>
+            <span class="chip">Quick Turn</span>
+          </div>
+        </div>
+
+        <div class="service reveal delay-1">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 38h36M10 38V14h28v24"/>
+            <rect x="14" y="18" width="6" height="6"/>
+            <rect x="28" y="18" width="6" height="6"/>
+            <rect x="14" y="28" width="6" height="6"/>
+            <rect x="28" y="28" width="6" height="6"/>
+          </svg>
+          <h3>Commercial &amp; Office</h3>
+          <p>After-hours scheduling, low-VOC products, building-management coordination. Offices, retail, restaurants. Minimum disruption, maximum finish.</p>
+          <div class="service-meta">
+            <span class="chip">After Hours</span>
+            <span class="chip">Low VOC</span>
+            <span class="chip">Multi-Unit</span>
+          </div>
+        </div>
+
+        <div class="service reveal delay-2">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M24 6L8 14v8c0 10 7 17 16 20 9-3 16-10 16-20v-8L24 6z"/>
+            <path d="M18 24l4 4 8-8"/>
+          </svg>
+          <h3>Move-In / Move-Out</h3>
+          <p>Fresh paint between tenants or before listing. Property managers, landlords, realtors. Fast turn, clean lines, photo report when we leave.</p>
+          <div class="service-meta">
+            <span class="chip">Pre-Listing</span>
+            <span class="chip">Tenant Turn</span>
+            <span class="chip">Punch List</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Process ─── -->
+  <section id="process" class="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-kicker">How We Work</div>
+        <h2 class="section-h">Five steps. <em>Nothing hidden.</em></h2>
+        <p class="section-lead">
+          The middle of a paint or drywall job is where most of the trouble starts.
+          We've structured ours so the next step is always clear — to you and to us.
+        </p>
+      </div>
+
+      <div class="process-grid reveal delay-1">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h4>Walk &amp; Quote</h4>
+          <p>You request an estimate. We come walk it (or go on a video walkthrough) and send you a real number with scope.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h4>Signed Scope</h4>
+          <p>You sign the scope and a deposit. Now we're committed and so are you. No surprises after.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h4>Schedule &amp; Show</h4>
+          <p>We schedule you, give you a window, show up when we said we would. You'll know when we're on the way.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h4>Work &amp; Document</h4>
+          <p>Same crew start to finish. Photos before, during, after. You see progress without asking.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">05</div>
+          <h4>Walkthrough &amp; Pay</h4>
+          <p>Final walkthrough together. Punch list if needed, knocked out same day. Then we invoice and you pay by card.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Differentiators ─── -->
+  <section class="diff">
+    <div class="container">
+      <div class="diff-grid">
+        <div class="reveal">
+          <div class="section-kicker">Why Primero</div>
+          <h2 class="section-h">A different kind of paint crew.</h2>
+          <p class="section-lead" style="margin-bottom: 36px;">
+            Most paint and drywall in the South is a flip of the coin. Either a giant
+            GC who treats your house like a checklist, or a guy with a truck and no
+            trail when something goes sideways. We sit deliberately in the middle.
+          </p>
+
+          <div class="diff-points">
+            <div class="diff-point">
+              <div class="diff-marker">
+                <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M6 16l4 4 10-12M22 22l4 4 4-6"/>
+                </svg>
+              </div>
+              <div>
+                <h4>The estimate is the price.</h4>
+                <p>Honest scoping up front, no "discovery" upcharges mid-job. If something genuinely changes, we tell you before we touch it.</p>
+              </div>
+            </div>
+
+            <div class="diff-point">
+              <div class="diff-marker">
+                <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <rect x="6" y="8" width="20" height="16" rx="2"/>
+                  <circle cx="16" cy="16" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <h4>Photos for everything.</h4>
+                <p>Before, during, after. We share them with you in real time. No more "did they actually do the trim" guesswork.</p>
+              </div>
+            </div>
+
+            <div class="diff-point">
+              <div class="diff-marker">
+                <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <circle cx="11" cy="13" r="4"/>
+                  <circle cx="21" cy="13" r="4"/>
+                  <path d="M5 26c0-4 3-6 6-6s6 2 6 6M15 26c0-4 3-6 6-6s6 2 6 6"/>
+                </svg>
+              </div>
+              <div>
+                <h4>One crew, one foreman.</h4>
+                <p>The people who quote your job are the people who do your job. No subcontracting handoffs. No "wait, who are you?"</p>
+              </div>
+            </div>
+
+            <div class="diff-point">
+              <div class="diff-marker">
+                <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M16 6v20M6 16h20"/>
+                  <circle cx="16" cy="16" r="11"/>
+                </svg>
+              </div>
+              <div>
+                <h4>English &amp; Spanish, both fluent.</h4>
+                <p>Clear communication on the job and on the call. Your foreman is bilingual. Your invoices come in English by default, Spanish on request.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal delay-2">
+          <div class="photo-grid">
+            <div class="photo-tile photo-tile-1"><div class="photo-meta"><span>Hallway · Day 1</span><span class="photo-stage">Before</span></div></div>
+            <div class="photo-tile photo-tile-2"><div class="photo-meta"><span>Patches · 12 spots</span><span class="photo-stage">In progress</span></div></div>
+            <div class="photo-tile photo-tile-3"><div class="photo-meta"><span>Trim · cut lines</span><span class="photo-stage">In progress</span></div></div>
+            <div class="photo-tile photo-tile-4"><div class="photo-meta"><span>Hallway · final</span><span class="photo-stage">After</span></div></div>
+          </div>
+          <p style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--steel); text-align:center; margin-top:14px; font-family:var(--sans);">Sample of a project documentation set</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Areas ─── -->
+  <section id="areas" class="areas">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-kicker">Where We Work</div>
+        <h2 class="section-h">Two markets. <em>Same standard.</em></h2>
+        <p class="section-lead">
+          We work in Greater Memphis and Oxford, Mississippi — two markets we know
+          intimately, with crews based in each. North Mississippi is a regular reach.
+          Outside those, ask us.
+        </p>
+      </div>
+
+      <div class="areas-grid">
+        <div class="area-card reveal">
+          <div class="market-label">Memphis Metro</div>
+          <h3>Memphis &amp; DeSoto County</h3>
+          <p>Midtown, East Memphis, Downtown, Cooper-Young, Germantown, Collierville, Bartlett. Plus DeSoto: Southaven, Olive Branch, Horn Lake.</p>
+          <ul class="area-list">
+            <li>Memphis · TN</li>
+            <li>Germantown</li>
+            <li>Collierville</li>
+            <li>Southaven · MS</li>
+            <li>Olive Branch</li>
+            <li>Horn Lake</li>
+          </ul>
+        </div>
+
+        <div class="area-card oxford reveal delay-1">
+          <div class="market-label">North Mississippi</div>
+          <h3>Oxford &amp; Lafayette County</h3>
+          <p>The Square, North Lamar, Old Taylor, the campus area, plus surrounding Lafayette County. STR turnover work a specialty.</p>
+          <ul class="area-list">
+            <li>Oxford · MS</li>
+            <li>Lafayette County</li>
+            <li>Taylor</li>
+            <li>Abbeville</li>
+            <li>Tula</li>
+            <li>Yocona</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Client center ─── -->
+  <section class="client">
+    <div class="container">
+      <div class="section-header center reveal">
+        <div class="section-kicker">For Clients</div>
+        <h2 class="section-h">Already working with us?</h2>
+      </div>
+
+      <div class="client-grid">
+        <a href="#" class="client-card reveal" data-mock>
+          <svg class="client-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="6" y="6" width="20" height="20" rx="2"/>
+            <path d="M11 12h10M11 16h10M11 20h6"/>
+          </svg>
+          <h4>Pay an Invoice</h4>
+          <p>Pay your Square invoice online by card. Quick and secure.</p>
+        </a>
+
+        <a href="#" class="client-card reveal delay-1" data-mock>
+          <svg class="client-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 8h20v16H6z"/>
+            <path d="M6 8l10 8 10-8"/>
+          </svg>
+          <h4>Send a Message</h4>
+          <p>Schedule changes, questions on a project, or anything else. We answer fast.</p>
+        </a>
+
+        <a href="#" class="client-card reveal delay-2" data-mock>
+          <svg class="client-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="5" y="9" width="22" height="14" rx="2"/>
+            <circle cx="16" cy="16" r="3"/>
+          </svg>
+          <h4>Project Photos</h4>
+          <p>Pull up photo documentation from any project we've completed for you.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Request form ─── -->
+  <section id="request" class="request">
+    <div class="container">
+      <div class="request-grid">
+        <div class="request-info reveal">
+          <div class="section-kicker">Get Started</div>
+          <h2 class="section-h">Tell us about the project.</h2>
+          <p>
+            Real estimates require a real walk-through. Fill this out and we'll
+            either come look or set up a video walk depending on size. Most quotes
+            back to you within 48 hours.
+          </p>
+          <p>
+            We respond in English or Spanish — your choice.
+          </p>
+
+          <div class="request-info-block">
+            <span class="label">Or call / text</span>
+            <a href="#" data-mock>662·715·1804</a>
+            <a href="#" data-mock>WhatsApp Us</a>
+          </div>
+        </div>
+
+        <form class="request-form reveal delay-1" id="estimate-form" onsubmit="return mockSubmit(event)">
+          <div class="form-grid">
+            <div class="field">
+              <label for="first_name">First Name</label>
+              <input type="text" id="first_name" name="first_name" placeholder="Sarah" />
+            </div>
+            <div class="field">
+              <label for="last_name">Last Name</label>
+              <input type="text" id="last_name" name="last_name" placeholder="Johnson" />
+            </div>
+            <div class="field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="(901) 555-0123" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="sarah@email.com" />
+            </div>
+            <div class="field full">
+              <label for="project_address">Project Address</label>
+              <input type="text" id="project_address" name="project_address" placeholder="123 Main St, Memphis, TN 38104" />
+            </div>
+            <div class="field">
+              <label for="project_type">Project Type</label>
+              <select id="project_type" name="project_type">
+                <option>Interior Paint — single room</option>
+                <option>Interior Paint — multi-room / whole home</option>
+                <option>Exterior Paint</option>
+                <option>Drywall Repair</option>
+                <option>Drywall Hang &amp; Finish</option>
+                <option>STR Turnover Refresh</option>
+                <option>Commercial / Office</option>
+                <option>Move-In / Move-Out</option>
+                <option>Custom — tell us in notes</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="project_size">Approx. Size</label>
+              <select id="project_size" name="project_size">
+                <option>Under 500 sq ft (1 room)</option>
+                <option>500 – 1,500 sq ft</option>
+                <option>1,500 – 3,000 sq ft</option>
+                <option>3,000+ sq ft</option>
+                <option>Not sure</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="occupancy">Occupancy</label>
+              <select id="occupancy" name="occupancy">
+                <option>Currently occupied</option>
+                <option>Vacant</option>
+                <option>Between tenants</option>
+                <option>STR — between guests</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="timing">When</label>
+              <select id="timing" name="timing">
+                <option>ASAP</option>
+                <option>Within 2 weeks</option>
+                <option>Within 1 month</option>
+                <option>Just exploring</option>
+              </select>
+            </div>
+            <div class="field full">
+              <label for="notes">Notes &amp; Specifics</label>
+              <textarea id="notes" name="notes" placeholder="Color preferences, areas to focus on, any tricky access, anything you'd want us to know."></textarea>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-gold form-submit">Request Estimate</button>
+          <p class="form-meta">Mockup form — wiring later. No data is sent.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <svg class="footer-mark" viewBox="0 0 200 200" aria-hidden="true">
+            <rect width="200" height="200" rx="14" fill="#15192C"/>
+            <circle cx="100" cy="100" r="86" fill="none" stroke="#C8A46B" stroke-width="5"/>
+            <rect x="22" y="108" width="156" height="13" rx="2" fill="#F5F1EA"/>
+            <circle cx="176" cy="129" r="4" fill="#F5F1EA"/>
+            <text x="100" y="148" text-anchor="middle"
+                  font-family="Playfair Display, Times New Roman, serif"
+                  font-style="italic" font-weight="500" font-size="160" fill="#C8A46B">P</text>
+          </svg>
+          <h5 style="margin-bottom:4px;">Primero</h5>
+          <p>Paint and drywall, Memphis &amp; Oxford. Walls done properly.</p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#" data-mock>Interior Paint</a></li>
+            <li><a href="#" data-mock>Exterior Paint</a></li>
+            <li><a href="#" data-mock>Drywall &amp; Repair</a></li>
+            <li><a href="#" data-mock>STR Turn Refresh</a></li>
+            <li><a href="#" data-mock>Commercial</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Where We Work</h5>
+          <ul>
+            <li>Memphis · TN</li>
+            <li>Germantown</li>
+            <li>Collierville</li>
+            <li>Oxford · MS</li>
+            <li>Lafayette County</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="#" data-mock>662·715·1804</a></li>
+            <li><a href="#" data-mock>hello@primero.work</a></li>
+            <li><a href="#" data-mock>WhatsApp</a></li>
+            <li><a href="#" data-mock>Pay Invoice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Primero Paint + Drywall · A Berger Holdings brand</span>
+        <span class="footer-sister">Sister brand: <a href="https://ladiesprimera901.com/" target="_blank" rel="noopener">Ladies Primera Cleaning ↗</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mock-notice" id="mockNotice">Mockup — wiring later</div>
+
+  <script>
+    // Reveal on scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Mock notice on click of any data-mock element (except nav anchors that should still scroll)
+    const notice = document.getElementById('mockNotice');
+    let noticeTimer;
+    function showMockNotice(msg) {
+      notice.textContent = msg || 'Mockup — wiring later';
+      notice.classList.add('show');
+      clearTimeout(noticeTimer);
+      noticeTimer = setTimeout(() => notice.classList.remove('show'), 1900);
+    }
+
+    document.querySelectorAll('[data-mock]').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const href = el.getAttribute('href') || '';
+        // Allow in-page anchors to actually scroll
+        if (href.startsWith('#') && href.length > 1) return;
+        e.preventDefault();
+        showMockNotice();
+      });
+    });
+
+    function mockSubmit(e) {
+      e.preventDefault();
+      showMockNotice('Mockup — form not wired yet');
+      return false;
+    }
+  </script>
+</body>
+</html>
